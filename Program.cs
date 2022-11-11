@@ -32,8 +32,9 @@ int minStrSum = int.MaxValue, indexMinStr = 0;
                     minStrSum = StrSum;
                     indexMinStr = i;
                 }
-             } 
-             Console.WriteLine("Строка с минимальной суммой элементов");
-                 for(int j = 0; j < array.GetLength(1); j++) break;
+                for(int j = 0; j < array.GetLength(1); j++) break;
+             }
+             Console.WriteLine("Минимальная сумма элементов в " + $"{indexMinStr+1} строке");
+                 
                       Console.Write(indexMinStr+1); 
                     
