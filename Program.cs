@@ -20,21 +20,20 @@ for (int i = 0; i < array.GetLength(0); i++)
 Console.WriteLine();
 }
 int minStrSum = int.MaxValue, indexMinStr = 0;
- 
-             for (int i = 0; i < array.GetLength(0); i++)
-             {
-                int StrSum = 0;
-                for (int j = 0; j < array.GetLength(1); j++)
-                    StrSum += array[i, j];
-                
-                if (StrSum < minStrSum)
-                {
-                    minStrSum = StrSum;
-                    indexMinStr = i;
-                }
-                for(int j = 0; j < array.GetLength(1); j++) break;
-             }
-             Console.WriteLine("Минимальная сумма элементов в " + $"{indexMinStr+1} строке");
-                 
-                      Console.Write(indexMinStr+1); 
+ {
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        int StrSum = 0;
+        for (int j = 0; j < array.GetLength(1); j++)
+        StrSum += array[i, j];
+        if (StrSum < minStrSum)
+        {
+            minStrSum = StrSum;
+            indexMinStr = i;
+        }
+            for(int j = 0; j < array.GetLength(1); j++) break;
+    }
+    Console.WriteLine("Минимальная сумма элементов: " + $"{indexMinStr+1} строка");
+                   
+ }
                     
