@@ -8,7 +8,7 @@
 
 Random random = new Random();
 
-int [,] array = new int[4, 5];
+int [,] array = new int[7, 5];
 
 for (int i = 0; i < array.GetLength(0); i++)
 {
@@ -17,21 +17,23 @@ for (int i = 0; i < array.GetLength(0); i++)
         array[i, j] = random.Next(1, 10);
         Console.Write(array[i, j] + " ");
     }
-    Console.WriteLine();
-}
-
-for (int i = 0; i < array.GetLength(0); i++)
-{
-    int Sum = 0;
-    int MinSum = 0;
-    int index = 0;
-    for (int j = 0; j < array.GetLength(1); j++)
-    {  
-        Sum += array[i, j]; 
-        if (Sum <= MinSum) Sum = MinSum;
-        index = i; 
-    }
-     Console.Write($"Наименьшая сумма элементов {array[i, j]} "  + "строка" );
-}
 Console.WriteLine();
-
+}
+int minStrSum = int.MaxValue, indexMinStr = 0;
+ 
+             for (int i = 0; i < array.GetLength(0); i++)
+             {
+                int StrSum = 0;
+                for (int j = 0; j < array.GetLength(1); j++)
+                    StrSum += array[i, j];
+                
+                if (StrSum < minStrSum)
+                {
+                    minStrSum = StrSum;
+                    indexMinStr = i;
+                }
+             } 
+             Console.WriteLine("Строка с минимальной суммой элементов");
+                 for(int j = 0; j < array.GetLength(1); j++) break;
+                      Console.Write(indexMinStr+1); 
+                    
